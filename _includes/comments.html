@@ -21,8 +21,8 @@
         {%- assign _last = _admin | size | minus: 1 -%}
         {%- assign _admin = _admin | slice: 2, _last -%}
         <script>
-            window.Lazyload.css('https://cdn.bootcss.com/gitalk/1.2.2/gitalk.min.cs');
-            window.Lazyload.js('https://cdn.bootcss.com/gitalk/1.2.2/gitalk.min.js', function() {
+            window.Lazyload.css('https://unpkg.com/gitalk@1.2.2/dist/gitalk.css');
+            window.Lazyload.js('https://unpkg.com/gitalk@1.2.2/dist/gitalk.min.js', function() {
                 var gitalk = new Gitalk({
                     clientID: '{{ site.gitalk.clientID }}',
                     clientSecret: '{{ site.gitalk.clientSecret }}',
