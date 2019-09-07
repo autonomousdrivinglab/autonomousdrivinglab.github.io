@@ -31,12 +31,12 @@ authors:
   ## Gitalk
   # please refer to https://github.com/gitalk/gitalk for more info.
 gitalk:
-    clientID    : 79d17be117fbddf14aa2 # GitHub Application Client ID
-    clientSecret: 8423d9fc9183a754eaea0cf23b2317d5f12c2b8c # GitHub Application Client Secret
-    repository  : autonomousdrivinglab.github.io # GitHub repo
-    owner       : autonomousdrivinglab # GitHub repo owner
-    admin: autonomousdrivinglab # GitHub repo owner and collaborators, only these guys can initialize GitHub issues, IT IS A LIST.
-      # - your GitHub Id
+    clientID    : '79d17be117fbddf14aa2'
+    clientSecret: '8423d9fc9183a754eaea0cf23b2317d5f12c2b8c'
+    repository  : 'autonomousdrivinglab.github.io'
+    owner       : 'autonomousdrivinglab'
+    admin: 'autonomousdrivinglab'
+
 
 # Defaults
 defaults:
