@@ -24,7 +24,7 @@
                     repo: '{{ site.gitalk.repository }}',
                     owner: '{{ site.gitalk.owner }}',
                     admin: [{{ _admin }}],
-                    id: '{{ page.key }}'
+                    id: '{{ page.key| truncate: 50, '' }}'
                 });
             gitalk.render('gitalk-container');
         </script> 
