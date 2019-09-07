@@ -1,4 +1,4 @@
-I"³<div class="container">
+I"´<div class="container">
 <h4 class="font-weight-bold spanborder"><span>Authors</span></h4>
     <div class="row gap-y listrecent listrecent listauthor">
     
@@ -10,7 +10,7 @@
             <a href="/author-lyf">
             <h4 class="text-dark mb-0"> lyf </h4>
             <small class="d-inline-block mt-1 mb-3 font-weight-normal">(View Posts)</small>
-            <div class="excerpt">Hi, I am lyf</div>
+            <div class="excerpt">Hi, I am lyf </div>
             </a>
             <div class="icon-block mt-3 d-flex justify-content-between">  
             <div>

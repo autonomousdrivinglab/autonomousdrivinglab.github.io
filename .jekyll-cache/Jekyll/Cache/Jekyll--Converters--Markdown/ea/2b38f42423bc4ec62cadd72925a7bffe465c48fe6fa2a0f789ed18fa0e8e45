@@ -1,11 +1,12 @@
-I"Ð<div class="container">
+I"²
+<div class="container">
 <div class="row justify-content-center">
     <div class="col-md-8">        
         <div class="row align-items-center mb-5">
             <div class="col-md-9">
                 <h2 class="font-weight-bold">lyf <span class="small btn btn-outline-success btn-sm btn-round"><a href="https://twitter.com/yifeiliu13">Follow</a></span></h2>
                 <p><a href="https://github.com/liuyf5231">https://github.com/liuyf5231</a></p>
-                <p class="excerpt">Hi, I am lyf</p>
+                <p class="excerpt">Hi, I am lyf </p>
             </div>
             <div class="col-md-3 text-right">
                 <img alt="lyf" src="//assets/images/avatar1.jpg" class="rounded-circle" height="100" width="100" />
@@ -37,6 +38,36 @@
 	<div class="col-md-3 pr-0 text-right">
 	<a href="/welcome-to-jekyll/">
 	<img class="w-100" src="/assets/images/demo1.jpg" alt="Welcome to Jekyll!" />
+	</a>
+	</div>
+
+</div>
+            
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="/education/">Education must also train one for quick, resolute and effective thinking.</a>
+	</h2>
+	<p class="excerpt">
+	   There are lots of powerful things you can do with the Markdown editor
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#jekyll">Jekyll</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="/categories.html#tutorial">tutorial</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		Feb 01, 2019
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="/education/">
+	<img class="w-100" src="/assets/images/3.jpg" alt="Education must also train one for quick, resolute and effective thinking." />
 	</a>
 	</div>
 
