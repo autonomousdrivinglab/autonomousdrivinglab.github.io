@@ -1,18 +1,37 @@
-<!--  Don't edit anything here. Set your disqus id in _config.yml -->
-
-<div id="comments" class="mt-5">
-    <div id="disqus_thread">
-    </div>
-    <script type="text/javascript">
-        var disqus_shortname = '{{site.disqus}}'; 
-        var disqus_developer = 0;
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-    <noscript>
-    Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-    </noscript>
-</div>
+{%- if page.key and
+    site.gitalk.clientID and
+      site.gitalk.clientSecret and
+      site.gitalk.repository and
+      site.gitalk.owner and
+      site.gitalk.admin -%}
+  
+      <!-- fix text color in the input textarea of gitalk -->
+      <style type="text/css">
+          .gitalk-wrapper .gt-header-textarea {
+              color: #333 !important;
+          }
+      </style>
+  
+      <div class="gitalk-wrapper" id="js-gitalk-container"></div>
+      {%- assign _admin = '' -%}
+      {%- for _admin_id in site.gitalk.admin -%}
+          {%- assign _admin = _admin | append: ", '" | append: _admin_id | append: "'" -%}
+      {%- endfor -%}
+      {%- assign _last = _admin | size | minus: 1 -%}
+      {%- assign _admin = _admin | slice: 2, _last -%}
+      <script>
+          window.Lazyload.css('https://cdn.bootcss.com/gitalk/1.2.2/gitalk.min.cs');
+          window.Lazyload.js('https://cdn.bootcss.com/gitalk/1.2.2/gitalk.min.js', function() {
+              var gitalk = new Gitalk({
+                  clientID: '{{ site.gitalk.clientID }}',
+                  clientSecret: '{{ site.gitalk.clientSecret }}',
+                  repo: '{{ site.gitalk.repository }}',
+                  owner: '{{ site.gitalk.owner }}',
+                  admin: [{{ _admin }}],
+                  id: '{{ page.key }}'
+              });
+              gitalk.render('js-gitalk-container');
+          });
+      </script>
+  
+  {%- endif -%}
