@@ -3,7 +3,7 @@ name: 'Autonomous Driving Lab'
 description: 'autonomous driving technology  laboratory'
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/favicon.ico'
-baseurl: '/'
+baseurl: '/autonomousdrivinglab.github.io'
 disqus: 'autonomousdrivinglab'
 email: 'autonomousdriving@163.com'
 mailchimp-list: 
@@ -22,7 +22,7 @@ authors:
     lyf:
       name:           lyf
       site:           https://github.com/liuyf5231
-      avatar:          /assets/images/avatar1.jpg
+      avatar:         /assets/images/avatar1.jpg
       bio:            "Hi, I am lyf "
       email:          liuyf5231@gmail.com
       twitter:        https://twitter.com/yifeiliu13
