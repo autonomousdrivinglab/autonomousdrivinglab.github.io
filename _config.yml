@@ -26,6 +26,7 @@ authors:
       bio:            "Hi, I am lyf "
       email:          liuyf5231@gmail.com
       twitter:        https://twitter.com/yifeiliu13
+      zhihu:          liuyf5231 # "user_name" the last part of your profile url, e.g. https://www.zhihu.com/people/user_name
 
 # Defaults
 defaults:
