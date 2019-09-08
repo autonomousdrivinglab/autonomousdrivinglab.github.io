@@ -1,0 +1,78 @@
+---
+layout: post
+title:  "ros入门(1)—ros中的一些编译汇总"
+categories: [ ROS ]
+image: https://gitpage-images.oss-cn-beijing.aliyuncs.com/img/ros.png
+key:  20190908
+author: lyf
+---
+
+主要介绍ros中库的编译以及调用，第三方so库的调用，依赖其他package中messages/services/actions文件（需要msg.h等先生成）的问题。
+##编译库
+库名称为autodrive_common，对应头文件在include目录下，需要在catkin_package中添加INCLUDE_DIRS和LIBRARIES，表示当前package（autodrive_common）对外提供的库以及头文件。
+
+```
+project(autodrive_common)
+catkin_package(INCLUDE_DIRS include
+               LIBRARIES autodrive_common)
+```
+
+添加库相关编译，库由string_tokenizer.cc生成。
+
+```
+add_library(autodrive_common src/string_tokenizer.cc)
+```
+
+如何调用libautodrive_common.so？
+在package.xml中添加对autodrive_common package的build和run depend，
+
+```
+<build_depend>autodrive_common</build_depend>
+<run_depend>autodrive_common</run_depend>
+```
+
+在需要调用库的package的CMakeLists.txt中在find_package中将autodrive_common作为catkin的components，然后就可以找到autodrive_common对外export的头文件`${catkin_INCLUDE_DIRS}`和库`${catkin_LIBRARIES}`。
+
+```
+find_package( catkin REQUIRED COMPONENTS
+              autodrive_common)
+include_directories(
+    include
+    ${catkin_INCLUDE_DIRS}
+)
+
+target_link_libraries(planning_node ${catkin_LIBRARIES})
+```
+##第三方库的调用
+对某些不开源的第三方库的使用，例如libCanCmd.so，将其放到package下的lib目录下，头文件放置在include目录下，
+
+```
+#找到头文件目录
+include_directories(
+ include
+)
+#指定库所在的目录
+link_directories(lib)
+#应用程序prog链接CanCmd库
+target_link_libraries(prog CanCmd )
+```
+
+##依赖其他package生成的msg
+对于将msg统一放在一个package中进行管理的情况，其他package在编译时需要先将该msg对应的package先编译生成对应的头文件。假如专门管理msg的package名为msgpackage。
+
+```
+#利用find_package将msgpackage设置为catkin的COMPONENTS,
+find_package(catkin REQUIRED COMPONENTS msgpackage)
+
+  add_executable(message_program src/main.cpp)
+  #设置message_program的依赖为${catkin_EXPORTED_TARGETS}
+  add_dependencies(message_program  ${catkin_EXPORTED_TARGETS})
+```
+那么`${catkin_EXPORTED_TARGETS}`是什么？在CMakeLists.txt中我们可以利用message()函数去debug，例如，
+
+```
+message("catkin_EXPORTED_TARGETS=${catkin_EXPORTED_TARGETS}")
+```
+![](https://gitpage-images.oss-cn-beijing.aliyuncs.com/img/20180528220922331.png)
+
+都是些形如package_name_generage_messages_cpp的flag，所以对msg/service等的依赖，既可以使用package_name_generage_messages_cpp这种形式，也可以一劳永逸的通过`find_package`和`catkin_EXPORTED_TARGETS`进行设置。
