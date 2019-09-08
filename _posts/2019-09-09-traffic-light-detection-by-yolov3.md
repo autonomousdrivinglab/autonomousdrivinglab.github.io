@@ -5,6 +5,7 @@ categories: [ Autopilot ]
 image: https://pjreddie.com/media/image/Screen_Shot_2018-03-24_at_10.48.42_PM.png
 key:  20190909
 author: lyf
+tags: [sticky]
 ---
 
 ![](https://gitpage-images.oss-cn-beijing.aliyuncs.com/img/20190611143738.jpg)
