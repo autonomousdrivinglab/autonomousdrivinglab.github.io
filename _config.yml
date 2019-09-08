@@ -31,12 +31,12 @@ authors:
   ## Gitalk
   # please refer to https://github.com/gitalk/gitalk for more info.
 gitalk:
-    clientID    : 79d17be117fbddf14aa2
-    clientSecret: 8423d9fc9183a754eaea0cf23b2317d5f12c2b8c
-    repository  : autonomousdrivinglab.github.io
-    owner       : autonomousdrivinglab
-    admin: autonomousdrivinglab
-
+  clientID    : 79d17be117fbddf14aa2
+  clientSecret: 8423d9fc9183a754eaea0cf23b2317d5f12c2b8c
+  repository  : autonomousdrivinglab.github.io
+  owner       : autonomousdrivinglab
+  admin:
+    - autonomousdrivinglab
 
 # Defaults
 defaults:
