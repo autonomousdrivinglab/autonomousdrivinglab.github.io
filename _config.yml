@@ -3,7 +3,7 @@ name: 'Autonomous Driving Lab'
 description: 'autonomous driving technology  laboratory'
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/favicon.ico'
-baseurl: '/web'
+baseurl: 
 disqus: 'autonomousdrivinglab'
 email: 'autonomousdriving@163.com'
 mailchimp-list: 
