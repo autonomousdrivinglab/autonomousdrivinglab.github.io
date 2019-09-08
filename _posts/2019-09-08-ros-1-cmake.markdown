@@ -2,13 +2,13 @@
 layout: post
 title:  "ros入门(1)—ros中的一些编译汇总"
 categories: [ ROS ]
-image: https://gitpage-images.oss-cn-beijing.aliyuncs.com/img/ros.png
+image: https://gitpage-images.oss-cn-beijing.aliyuncs.com/img/1_TuNT9jKOBbyDINDx3B-6tw.png
 key:  20190908
 author: lyf
 ---
 
 主要介绍ros中库的编译以及调用，第三方so库的调用，依赖其他package中messages/services/actions文件（需要msg.h等先生成）的问题。
-##编译库
+## 编译库
 库名称为autodrive_common，对应头文件在include目录下，需要在catkin_package中添加INCLUDE_DIRS和LIBRARIES，表示当前package（autodrive_common）对外提供的库以及头文件。
 
 ```
@@ -43,7 +43,7 @@ include_directories(
 
 target_link_libraries(planning_node ${catkin_LIBRARIES})
 ```
-##第三方库的调用
+## 第三方库的调用
 对某些不开源的第三方库的使用，例如libCanCmd.so，将其放到package下的lib目录下，头文件放置在include目录下，
 
 ```
@@ -57,7 +57,7 @@ link_directories(lib)
 target_link_libraries(prog CanCmd )
 ```
 
-##依赖其他package生成的msg
+## 依赖其他package生成的msg
 对于将msg统一放在一个package中进行管理的情况，其他package在编译时需要先将该msg对应的package先编译生成对应的头文件。假如专门管理msg的package名为msgpackage。
 
 ```
