@@ -2,7 +2,7 @@
 layout: post
 title:  "ros入门(1)—ros中的一些编译汇总"
 categories: [ ROS ]
-image: https://gitpage-images.oss-cn-beijing.aliyuncs.com/img/1567096305730.png
+image: https://gitpage-images.oss-cn-beijing.aliyuncs.com/img/ros.png
 key:  20190908
 author: lyf
 ---
