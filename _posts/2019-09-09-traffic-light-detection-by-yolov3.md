@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "traffic light detection by yolov3"
+title:  "Traffic light detection by yolov3"
 categories: [ Autopilot ]
 image: https://pjreddie.com/media/image/Screen_Shot_2018-03-24_at_10.48.42_PM.png
 key:  20190909
