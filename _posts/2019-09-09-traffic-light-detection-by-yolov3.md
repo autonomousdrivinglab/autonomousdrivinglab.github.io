@@ -2,13 +2,10 @@
 layout: post
 title:  "Traffic light detection by yolov3"
 categories: [ Autopilot ]
-image: https://pjreddie.com/media/image/Screen_Shot_2018-03-24_at_10.48.42_PM.png
+image: https://gitpage-images.oss-cn-beijing.aliyuncs.com/img/20190909084530.jpeg
 key:  20190909
 author: lyf
-tags: [sticky]
 ---
-
-![](https://gitpage-images.oss-cn-beijing.aliyuncs.com/img/20190611143738.jpg)
 
 
 >You only look once (YOLO) is a state-of-the-art, real-time object detection system. On a Pascal Titan X it processes images at 30 FPS and has a mAP of 57.9% on COCO test-dev.
